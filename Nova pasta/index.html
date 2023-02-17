@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="java.js">
+	<title>Ftp - Upload/Download</title>
+	<script type="text/javascript">
+		function drop(bt, id, fun){
+    var res = 0;
+    let drop = document.querySelector(id);
+    if(fun==0){
+        res=1;
+        drop.style.display = 'contents';
+    }else{
+        drop.style.display = 'none';
+    };
+    let onclick = "drop(this,'"+id+"',"+res+")";
+
+    bt.setAttribute('onclick', onclick);
+}
+
+	</script>
+	<style type="text/css">
+		*{
+    margin: 0px;
+    padding: 0px;
+    transition: all 0.25s;
+
+  }
+  		body{
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	align-items: center;
+  	overflow-y: overlay;
+  	background-color: #836FFF;
+}
+		.cabeca{
+			background-color: #6A5ACD;
+			width: 100%;
+			height: 10vh;
+			font-size: 7vh;
+		}
+		.titulo{
+			padding-left: 70vh;
+		}
+		input{
+			width: 15vw;
+			height: 3vh;
+			border-radius: 15px;
+			margin-top: 1vh;
+}
+		}
+		.corpo{
+			display: flex;
+			font-size: 4vh;
+		}
+		.form{
+		width: 100vw;
+        height: 67vh;
+        padding-top: 5vh;
+        backdrop-filter: blur(3px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+		}
+		p{
+		padding-left: 3vw;
+		}
+		.drop{
+		display: flex;
+		font-size: 4vh;
+
+		}
+		.download{
+		display: flex;
+		font-size: 4vh;
+		}
+	</style>
+</head>
+<body>
+	<div class="cabeca">
+		<p class="titulo">FTP - Upload/Download</p>
+	</div>
+	<form class="form">
+
+	<div class="corpo" style="display: flex; font-size: 4vh;">
+<p class="nome1">Email:</p><input class="inputs1" type="email" name="nome" placeholder="exemplo@email.com">
+<p class="nome1">Senha:</p><input class="inputs1" type="password" name="senha" placeholder="Senha">
+</div>
+<p class="nome3">Server:</p>
+<input type="name" name="server">
+	<a onclick="drop(this, '#drop1', 0)" style="display: flex;" id="entra">Avtorizovat</a>
+
+	<div class="drop1" style="display: none;" id="drop1">
+		<h2>Upload</h2>
+		<p>Arquivo a enviar</p>
+		<input type="file" name="Arquivo">
+		<button class="buscar">Buscar</button>
+		<button class="enviar">Enviar</button>
+	</div>
+
+	<div class="download">
+		<p>Arquivo:</p>
+		<input type="name" name="arquivo">
+		<p>Baixar para:</p>
+		<input type="file" name="arquivo">
+		<button class="Baixar">Baixar</button>
+	</div>
+</form>
+</body>
+
+</html>
